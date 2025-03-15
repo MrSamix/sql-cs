@@ -1,0 +1,28 @@
+﻿<Window x:Class="_03_WPF_ADO.NET.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_03_WPF_ADO.NET"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <DockPanel>
+        <ToolBar DockPanel.Dock="Top">
+            <ComboBox Name="Tables">
+                <ComboBoxItem Content="Authors"/>
+                <ComboBoxItem Content="Clients"/>
+                <ComboBoxItem Content="Books"/>
+                <ComboBoxItem Content="ClientsBooks"/>
+                <ComboBoxItem Content="BooksAuthors"/>
+            </ComboBox>
+            <Button Click="LoadTable">Load</Button>
+        </ToolBar>
+        <DataGrid Name="DataGrid" AutoGenerateColumns="True" DockPanel.Dock="Top" Height="300"/>
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom">
+            <Label>where</Label>
+            <TextBox Name="FilterTextBox" Width="200" Margin="5"/>
+            <Button Click="ApplyFilter">Apply Filter</Button>
+            <Button Click="UpdateTable" Margin="100,30,0,30" Width="200">Update</Button>
+        </StackPanel>
+    </DockPanel>
+</Window>
